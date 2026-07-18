@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Creative Kids Preschool — College Station, TX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FBF4E4;
+    --cream-deep:#F3E9D2;
+    --navy:#2B3A55;
+    --navy-deep:#202B3F;
+    --green:#4C8C6B;
+    --coral:#E8734A;
+    --gold:#E3A94C;
+    --sky:#5B8FB0;
+    --plum:#8B5E83;
+    --charcoal:#3A3A38;
+    --white:#FFFDF8;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--cream);
+    color:var(--charcoal);
+    font-family:'Figtree', sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  h1,h2,h3,h4{
+    font-family:'Fraunces', serif;
+    color:var(--navy);
+    line-height:1.15;
+    font-weight:600;
+  }
+
+  a{color:inherit; text-decoration:none;}
+
+  img{max-width:100%; display:block;}
+
+  .crayon-stripe{
+    height:6px;
+    width:100%;
+    background:linear-gradient(90deg,
+      var(--coral) 0%, var(--coral) 16.6%,
+      var(--gold) 16.6%, var(--gold) 33.2%,
+      var(--green) 33.2%, var(--green) 49.8%,
+      var(--sky) 49.8%, var(--sky) 66.4%,
+      var(--plum) 66.4%, var(--plum) 83%,
+      var(--navy) 83%, var(--navy) 100%);
+  }
+
+  .crayon-stripe.small{
+    height:4px;
+    width:64px;
+    border-radius:4px;
+    margin:14px 0 0;
+  }
+
+  .wrap{
+    max-width:1120px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  /* ---------- NAV ---------- */
+  header.site-nav{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:rgba(251,244,228,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid rgba(43,58,85,0.1);
+  }
+
+  .nav-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:16px 28px;
+    max-width:1120px;
+    margin:0 auto;
+  }
+
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:1.25rem;
+    color:var(--navy);
+  }
+
+  .brand-mark{
+    width:34px; height:34px;
+    border-radius:50%;
+    background:conic-gradient(var(--coral), var(--gold), var(--green), var(--sky), var(--plum), var(--coral));
+    flex-shrink:0;
+  }
+
+  nav.links{
+    display:flex;
+    gap:28px;
+    font-size:0.95rem;
+    font-weight:600;
+  }
+
+  nav.links a{
+    padding:6px 2px;
+    border-bottom:2px solid transparent;
+    transition:border-color 0.2s ease, color 0.2s ease;
+  }
+  nav.links a:hover{ border-color:var(--coral); color:var(--coral); }
+
+  .nav-cta{
+    background:var(--navy);
+    color:var(--white);
+    padding:10px 20px;
+    border-radius:999px;
+    font-weight:700;
+    font-size:0.9rem;
+    white-space:nowrap;
+  }
+  .nav-cta:hover{ background:var(--coral); }
+
+  .menu-toggle{ display:none; }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:64px 0 84px;
+  }
+
+  .hero-inner{
+    display:grid;
+    grid-template-columns:1.05fr 0.95fr;
+    gap:56px;
+    align-items:center;
+  }
+
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-size:0.8rem;
+    font-weight:700;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--green);
+    margin-bottom:18px;
+  }
+
+  .hero h1{
+    font-size:clamp(2.4rem, 4.2vw, 3.4rem);
+    letter-spacing:-0.01em;
+  }
+
+  .hero h1 em{
+    font-style:italic;
+    color:var(--coral);
+    font-weight:500;
+  }
+
+  .hero p.lede{
+    margin-top:22px;
+    font-size:1.15rem;
+    max-width:46ch;
+    color:#4b4b46;
+  }
+
+  .hero-actions{
+    margin-top:32px;
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+  }
+
+  .btn{
+    display:inline-block;
+    padding:14px 26px;
+    border-radius:999px;
+    font-weight:700;
+    font-size:0.95rem;
+    transition:transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .btn:hover{ transform:translateY(-2px); }
+
+  .btn-primary{
+    background:var(--coral);
+    color:var(--white);
+    box-shadow:0 8px 20px rgba(232,115,74,0.28);
+  }
+  .btn-secondary{
+    background:transparent;
+    color:var(--navy);
+    border:2px solid var(--navy);
+  }
+
+  .hero-facts{
+    display:flex;
+    gap:28px;
+    margin-top:44px;
+    flex-wrap:wrap;
+  }
+  .hero-fact strong{
+    display:block;
+    font-family:'Fraunces', serif;
+    font-size:1.5rem;
+    color:var(--navy);
+  }
+  .hero-fact span{
+    font-size:0.85rem;
+    color:#666;
+  }
+
+  .hero-media{
+    position:relative;
+  }
+  .hero-media .frame{
+    border-radius:22px;
+    overflow:hidden;
+    box-shadow:0 24px 48px rgba(43,58,85,0.22);
+    aspect-ratio:4/5;
+  }
+  .hero-media .frame img{
+    width:100%; height:100%; object-fit:cover;
+  }
+  .hero-media .badge{
+    position:absolute;
+    bottom:-22px;
+    left:-22px;
+    background:var(--white);
+    border-radius:16px;
+    padding:16px 20px;
+    box-shadow:0 14px 30px rgba(43,58,85,0.18);
+    max-width:220px;
+  }
+  .hero-media .badge strong{
+    display:block;
+    font-family:'Fraunces', serif;
+    color:var(--green);
+    font-size:1.05rem;
+  }
+  .hero-media .badge span{
+    font-size:0.82rem;
+    color:#666;
+  }
+
+  /* ---------- SECTION HEADERS ---------- */
+  section{ padding:88px 0; }
+  section.alt{ background:var(--white); }
+
+  .section-head{
+    max-width:640px;
+    margin-bottom:52px;
+  }
+  .section-head .eyebrow{ margin-bottom:12px; }
+  .section-head h2{ font-size:clamp(1.9rem, 3vw, 2.4rem); }
+  .section-head p{ margin-top:16px; color:#555; font-size:1.05rem; }
+
+  /* ---------- FEATURES GRID ---------- */
+  .features{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:28px;
+  }
+  .feature-card{
+    background:var(--white);
+    border-radius:18px;
+    padding:30px 26px;
+    box-shadow:0 10px 24px rgba(43,58,85,0.06);
+    border:1px solid rgba(43,58,85,0.06);
+  }
+  .feature-card .icon{
+    width:46px; height:46px;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.3rem;
+    margin-bottom:16px;
+  }
+  .feature-card h3{
+    font-size:1.12rem;
+    margin-bottom:8px;
+  }
+  .feature-card p{
+    font-size:0.95rem;
+    color:#5a5a55;
+  }
+
+  .icon.c1{ background:rgba(232,115,74,0.15); }
+  .icon.c2{ background:rgba(76,140,107,0.15); }
+  .icon.c3{ background:rgba(91,143,176,0.15); }
+  .icon.c4{ background:rgba(227,169,76,0.18); }
+  .icon.c5{ background:rgba(139,94,131,0.15); }
+  .icon.c6{ background:rgba(43,58,85,0.1); }
+
+  /* ---------- ABOUT / TEACHER ---------- */
+  .about-grid{
+    display:grid;
+    grid-template-columns:0.85fr 1.15fr;
+    gap:56px;
+    align-items:center;
+  }
+  .about-grid .frame{
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 20px 40px rgba(43,58,85,0.16);
+  }
+  .about-grid .frame img{ width:100%; height:100%; object-fit:cover; }
+
+  .quote-mark{
+    font-family:'Fraunces', serif;
+    font-size:3.5rem;
+    color:var(--coral);
+    line-height:0.6;
+    display:block;
+    margin-bottom:6px;
+  }
+
+  .about-copy h2{ font-size:clamp(1.8rem,3vw,2.3rem); margin-bottom:18px; }
+  .about-copy p{ color:#4d4d48; margin-bottom:16px; font-size:1.05rem; }
+  .about-copy .signature{
+    margin-top:26px;
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    color:var(--navy);
+    font-size:1.1rem;
+  }
+
+  /* ---------- CURRICULUM ---------- */
+  .curriculum-layout{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:56px;
+    align-items:start;
+  }
+  .curriculum-media .frame{
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 20px 40px rgba(43,58,85,0.16);
+    aspect-ratio:4/5;
+  }
+  .curriculum-media .frame img{ width:100%; height:100%; object-fit:cover; }
+
+  .subject-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:14px 22px;
+  }
+  .subject-item{
+    display:flex;
+    align-items:baseline;
+    gap:10px;
+    padding:12px 0;
+    border-bottom:1px solid rgba(43,58,85,0.1);
+    font-weight:600;
+    color:var(--navy);
+    font-size:0.98rem;
+  }
+  .subject-item .num{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    color:var(--coral);
+    font-weight:500;
+    font-size:0.9rem;
+  }
+
+  /* ---------- SCHEDULE ---------- */
+  .schedule-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:24px;
+  }
+  .schedule-card{
+    background:var(--navy);
+    color:var(--white);
+    border-radius:20px;
+    padding:34px 30px;
+    position:relative;
+    overflow:hidden;
+  }
+  .schedule-card.alt-card{
+    background:var(--white);
+    color:var(--charcoal);
+    border:1px solid rgba(43,58,85,0.12);
+    box-shadow:0 10px 24px rgba(43,58,85,0.06);
+  }
+  .schedule-card h3{
+    font-family:'Fraunces', serif;
+    color:inherit;
+    font-size:1.3rem;
+    margin-bottom:6px;
+  }
+  .schedule-card .alt-card h3{ color:var(--navy); }
+  .schedule-card .term-dates{
+    font-size:0.92rem;
+    opacity:0.85;
+    margin-bottom:20px;
+  }
+  .schedule-card .price{
+    font-family:'Fraunces', serif;
+    font-size:2.1rem;
+    margin-bottom:4px;
+  }
+  .schedule-card .price span{
+    font-size:0.95rem;
+    font-weight:400;
+    opacity:0.8;
+  }
+  .schedule-card .meet-times{
+    margin-top:18px;
+    font-size:0.9rem;
+    padding-top:18px;
+    border-top:1px solid rgba(255,255,255,0.18);
+    opacity:0.9;
+  }
+  .schedule-card.alt-card .meet-times{
+    border-top:1px solid rgba(43,58,85,0.14);
+  }
+
+  .note-box{
+    margin-top:32px;
+    background:var(--cream-deep);
+    border-radius:16px;
+    padding:22px 26px;
+    font-size:0.95rem;
+    color:#5a5a52;
+    border-left:4px solid var(--gold);
+  }
+  .note-box strong{ color:var(--navy); }
+
+  /* ---------- PROGRAMS STRIP ---------- */
+  .programs{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:24px;
+  }
+  .program-card{
+    border-radius:20px;
+    overflow:hidden;
+    position:relative;
+    min-height:260px;
+    display:flex;
+    align-items:flex-end;
+  }
+  .program-card img{
+    position:absolute; inset:0;
+    width:100%; height:100%;
+    object-fit:cover;
+  }
+  .program-card::after{
+    content:"";
+    position:absolute; inset:0;
+    background:linear-gradient(0deg, rgba(32,43,63,0.88) 0%, rgba(32,43,63,0.25) 55%, rgba(32,43,63,0) 100%);
+  }
+  .program-card .content{
+    position:relative;
+    z-index:2;
+    padding:26px;
+    color:var(--white);
+  }
+  .program-card h3{
+    color:var(--white);
+    font-size:1.3rem;
+    margin-bottom:6px;
+  }
+  .program-card p{
+    font-size:0.92rem;
+    opacity:0.92;
+    max-width:38ch;
+  }
+
+  /* ---------- CONTACT / CTA ---------- */
+  .cta-band{
+    background:var(--navy);
+    border-radius:28px;
+    padding:56px;
+    display:grid;
+    grid-template-columns:1.2fr 0.8fr;
+    gap:40px;
+    align-items:center;
+    color:var(--white);
+  }
+  .cta-band h2{ color:var(--white); font-size:clamp(1.7rem,3vw,2.2rem); }
+  .cta-band p{ margin-top:14px; color:rgba(255,253,248,0.82); font-size:1.02rem; max-width:48ch; }
+
+  .contact-card{
+    background:rgba(255,253,248,0.06);
+    border:1px solid rgba(255,253,248,0.18);
+    border-radius:18px;
+    padding:26px;
+  }
+  .contact-card dl{ display:grid; gap:16px; }
+  .contact-card dt{
+    font-size:0.78rem;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    color:var(--gold);
+    font-weight:700;
+    margin-bottom:3px;
+  }
+  .contact-card dd{ font-size:1rem; color:var(--white); }
+  .contact-card dd.placeholder{ color:rgba(255,253,248,0.55); font-style:italic; }
+
+  .cta-band .btn-primary{ margin-top:26px; }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    padding:44px 0 60px;
+    text-align:center;
+  }
+  footer .brand{ justify-content:center; margin-bottom:14px; }
+  footer p{ font-size:0.85rem; color:#7a7a72; }
+  footer .credits{
+    margin-top:18px;
+    font-size:0.75rem;
+    color:#a3a39a;
+    max-width:560px;
+    margin-left:auto;
+    margin-right:auto;
+    line-height:1.7;
+  }
+  footer .credits a{ text-decoration:underline; }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 880px){
+    nav.links{ display:none; }
+    .hero-inner, .about-grid, .curriculum-layout{
+      grid-template-columns:1fr;
+    }
+    .hero-media{ order:-1; }
+    .features{ grid-template-columns:1fr; }
+    .schedule-grid{ grid-template-columns:1fr; }
+    .programs{ grid-template-columns:1fr; }
+    .cta-band{ grid-template-columns:1fr; padding:36px 26px; }
+    .subject-grid{ grid-template-columns:1fr; }
+    .hero-media .badge{ left:12px; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    .btn:hover{ transform:none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand"><span class="brand-mark"></span>Creative Kids Preschool</a>
+    <nav class="links">
+      <a href="#about">About Us</a>
+      <a href="#curriculum">Curriculum</a>
+      <a href="#schedule">Schedule &amp; Fees</a>
+      <a href="#programs">Mother's Day Out</a>
+    </nav>
+    <a href="#contact" class="nav-cta">Get in Touch</a>
+  </div>
+  <div class="crayon-stripe"></div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div class="hero-copy">
+        <span class="eyebrow">In-home preschool · College Station, TX</span>
+        <h1>A small, colorful classroom where <em>curiosity</em> gets its start.</h1>
+        <p class="lede">Creative Kids Preschool welcomes children ages 3&ndash;5 into a comfortable, in-home learning environment &mdash; where hands-on science, art, and a kindergarten-ready curriculum meet the warmth of a class that never gets too big to notice you.</p>
+        <div class="hero-actions">
+          <a href="#schedule" class="btn btn-primary">See Schedule &amp; Fees</a>
+          <a href="#about" class="btn btn-secondary">Meet the Teacher</a>
+        </div>
+        <div class="hero-facts">
+          <div class="hero-fact"><strong>Ages 3&ndash;5</strong><span>Kindergarten-ready curriculum</span></div>
+          <div class="hero-fact"><strong>Since 2011</strong><span>Same dedicated teacher</span></div>
+          <div class="hero-fact"><strong>Small groups</strong><span>Individualized attention</span></div>
+        </div>
+      </div>
+      <div class="hero-media">
+        <div class="frame">
+          <img src="https://images.pexels.com/photos/8535585/pexels-photo-8535585.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Teacher and preschooler engaged in creative play in a colorful classroom">
+        </div>
+        <div class="badge">
+          <strong>Hands-on, every day</strong>
+          <span>Art, science, and Spanish woven into daily play</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">What makes us great</span>
+        <h2>Big-hearted teaching, small class sizes.</h2>
+        <div class="crayon-stripe small"></div>
+      </div>
+      <div class="features">
+        <div class="feature-card">
+          <div class="icon c1">🎨</div>
+          <h3>Small class size</h3>
+          <p>A truly individualized learning experience &mdash; every child gets seen, not just supervised.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon c2">🏡</div>
+          <h3>In-home atmosphere</h3>
+          <p>A comfortable, familiar setting that feels less like drop-off and more like a second home.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon c3">🔬</div>
+          <h3>Hands-on science</h3>
+          <p>Real experiments, real curiosity &mdash; science that kids get to touch, not just hear about.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon c4">🚌</div>
+          <h3>Field trips</h3>
+          <p>Learning that leaves the classroom, with exciting trips throughout the year.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon c5">🖍️</div>
+          <h3>Creative art &amp; Spanish</h3>
+          <p>Fun art projects paired with an introduction to basic Spanish words and counting.</p>
+        </div>
+        <div class="feature-card">
+          <div class="icon c6">🎓</div>
+          <h3>Kindergarten-ready</h3>
+          <p>A curriculum built to send children into kindergarten confident and prepared.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap about-grid">
+      <div class="frame">
+        <img src="https://images.pexels.com/photos/8535229/pexels-photo-8535229.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Children listening to their teacher on the floor of a vibrant preschool classroom">
+      </div>
+      <div class="about-copy">
+        <span class="eyebrow">About Us</span>
+        <h2>Who we are</h2>
+        <p>Creative Kids Preschool is an in-home preschool serving College Station, TX and the surrounding areas, teaching children ages 3&ndash;5.</p>
+        <span class="quote-mark">&ldquo;</span>
+        <p>Miss Becky is the owner and teacher. She has been working with and teaching children in various capacities for over twenty years, and began teaching at Creative Kids Preschool in 2011.</p>
+        <p class="signature">&mdash; Miss Becky, Owner &amp; Teacher</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CURRICULUM -->
+  <section id="curriculum" class="alt">
+    <div class="wrap curriculum-layout">
+      <div>
+        <span class="eyebrow">Curriculum</span>
+        <h2 style="margin-bottom:8px;">Fourteen subjects, one joyful classroom.</h2>
+        <div class="crayon-stripe small" style="margin-bottom:32px;"></div>
+        <div class="subject-grid">
+          <div class="subject-item"><span class="num">01</span> Alphabet &amp; Phonics</div>
+          <div class="subject-item"><span class="num">02</span> Numbers &amp; Counting</div>
+          <div class="subject-item"><span class="num">03</span> Shapes &amp; Colors</div>
+          <div class="subject-item"><span class="num">04</span> Spanish: Counting &amp; Colors</div>
+          <div class="subject-item"><span class="num">05</span> Matching &amp; Opposites</div>
+          <div class="subject-item"><span class="num">06</span> Handwriting</div>
+          <div class="subject-item"><span class="num">07</span> Beginning Reading</div>
+          <div class="subject-item"><span class="num">08</span> Motor Skills</div>
+          <div class="subject-item"><span class="num">09</span> Songs &amp; Rhyming</div>
+          <div class="subject-item"><span class="num">10</span> Science</div>
+          <div class="subject-item"><span class="num">11</span> Simple Math</div>
+          <div class="subject-item"><span class="num">12</span> Creative Art</div>
+          <div class="subject-item"><span class="num">13</span> Social Skills</div>
+          <div class="subject-item"><span class="num">14</span> Fun!!!</div>
+        </div>
+      </div>
+      <div class="curriculum-media">
+        <div class="frame">
+          <img src="https://images.pexels.com/photos/8535197/pexels-photo-8535197.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Children painting with watercolors at a bright classroom table">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCHEDULE -->
+  <section id="schedule">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Schedule &amp; Fees</span>
+        <h2>Two mornings a week, all school year.</h2>
+        <div class="crayon-stripe small"></div>
+      </div>
+      <div class="schedule-grid">
+        <div class="schedule-card">
+          <h3>Class Meets</h3>
+          <div class="term-dates">Every week, year-round</div>
+          <div class="price">Mon &amp; Wed</div>
+          <div class="meet-times">8:30 &ndash; 11:30 AM</div>
+        </div>
+        <div class="schedule-card alt-card">
+          <h3>Fall 2026</h3>
+          <div class="term-dates">August 17 &ndash; December 16</div>
+          <div class="price">$200 <span>/ month</span></div>
+          <div class="meet-times">Monday &amp; Wednesday mornings</div>
+        </div>
+        <div class="schedule-card alt-card">
+          <h3>Spring 2027</h3>
+          <div class="term-dates">January 6 &ndash; May 19</div>
+          <div class="price">$200 <span>/ month</span></div>
+          <div class="meet-times">Monday &amp; Wednesday mornings</div>
+        </div>
+      </div>
+      <div class="note-box">
+        <strong>Enrolling now:</strong> Spots are limited by design &mdash; that's what keeps class sizes small. Reach out below to check current availability for Fall 2026 and Spring 2027.
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAMS -->
+  <section id="programs" class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Seasonal &amp; Extra Programs</span>
+        <h2>Beyond the regular school year.</h2>
+        <div class="crayon-stripe small"></div>
+      </div>
+      <div class="programs">
+        <div class="program-card">
+          <img src="https://images.pexels.com/photos/8535237/pexels-photo-8535237.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Children playing together on a colorful classroom floor">
+          <div class="content">
+            <h3>Mother's Day Out</h3>
+            <p>A flexible option for parents who need a trusted, joyful place for their little one for a morning. <em>Ask us for current days and pricing.</em></p>
+          </div>
+        </div>
+        <div class="program-card">
+          <img src="https://images.pexels.com/photos/8535636/pexels-photo-8535636.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Bright playroom with colorful cardboard animal figures">
+          <div class="content">
+            <h3>Summer Camp</h3>
+            <p>Seasonal camp classes keep the learning &mdash; and the fun &mdash; going through the summer months. <em>Contact us for this year's dates.</em></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="cta-band">
+        <div>
+          <span class="eyebrow" style="color:var(--gold);">Get in Touch</span>
+          <h2>Come see the classroom for yourself.</h2>
+          <p>The best way to know if Creative Kids is the right fit is to visit. Reach out to schedule a tour, ask about openings, or get this season's Mother's Day Out details.</p>
+          <a href="#" class="btn btn-primary">Request a Tour</a>
+        </div>
+        <div class="contact-card">
+          <dl>
+            <div>
+              <dt>Phone</dt>
+              <dd class="placeholder">Add phone number</dd>
+            </div>
+            <div>
+              <dt>Email</dt>
+              <dd class="placeholder">Add email address</dd>
+            </div>
+            <div>
+              <dt>Location</dt>
+              <dd>College Station, TX</dd>
+            </div>
+            <div>
+              <dt>Hours</dt>
+              <dd>Mon &amp; Wed, 8:30&ndash;11:30 AM</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <a href="#top" class="brand"><span class="brand-mark"></span>Creative Kids Preschool</a>
+    <p>In-home preschool for ages 3&ndash;5 &middot; College Station, TX</p>
+    <p class="credits">
+      Design concept mockup. Photography by Ksenia Chernaya via
+      <a href="https://www.pexels.com/@kseniachernaya/" target="_blank" rel="noopener">Pexels</a>,
+      used under the free
+      <a href="https://www.pexels.com/license/" target="_blank" rel="noopener">Pexels License</a> (no attribution required, credited here as good practice).
+      Fonts: Fraunces &amp; Figtree via Google Fonts.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
